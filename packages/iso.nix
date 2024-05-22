@@ -19,6 +19,7 @@ let
           settings.PasswordAuthentication = false;
           settings.KbdInteractiveAuthentication = false;
         };
+        openmesh-core.enable = true; # Service testing
       };
       boot = {
         loader = {
@@ -37,7 +38,7 @@ let
       environment = {
         systemPackages = with pkgs; [
           prometheus grafana 
-        ];
+        ]
       };
       networking = {
         hostName = "xnode";
