@@ -1,1 +1,5 @@
+.gitignore
 result
+
+# For now, on this branch, keep it ignored
+xnode-admin.nix 

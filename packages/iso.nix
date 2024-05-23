@@ -19,7 +19,7 @@ let
           settings.PasswordAuthentication = false;
           settings.KbdInteractiveAuthentication = false;
         };
-        openmesh-core.enable = true; # Service testing
+        #xnode-services.openmesh-core.enable = true; # Service testing
       };
       boot = {
         loader = {
@@ -36,9 +36,9 @@ let
         makeUsbBootable = true;
       };
       environment = {
-        systemPackages = with pkgs; [
-          prometheus grafana 
-        ]
+        systemPackages = [
+          pkgs.prometheus pkgs.grafana pkgs.kubo openmesh-core
+        ];
       };
       networking = {
         hostName = "xnode";

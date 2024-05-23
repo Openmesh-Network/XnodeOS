@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }:
-# geth.nix used as a template.
 
 with lib;
 

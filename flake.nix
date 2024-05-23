@@ -3,12 +3,14 @@
   inputs = {
     nixpkgs.url = "flake:nixpkgs/nixpkgs-unstable";
     nixos-generators.url = "github:nix-community/nixos-generators";
-    xnodeos-pkgs.url = "github:Openmesh-Network/XnodeOS"; # Private repo, 404 error
+    #xnode-pkgs.url = "github:Openmesh-Network/XnodeOS"; # Circular input to top level flake
   };
   outputs = inputs:
     let
       flakeContext = {
         inherit inputs;
+        openmesh-core = inputs: (inputs.nixpkgs.callPackage ./packages/openmesh-core) { };
+
       };
     in
     {
