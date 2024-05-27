@@ -18,6 +18,8 @@ let
   };
 in
 {
+  meta.maintainers = with maintainers; [ harrys522 ];
+  
   ###### interface
   options = {
     services.openmesh-core = mkOption {
@@ -43,7 +45,10 @@ in
         after = [ "network.target" ];
 
         serviceConfig = {
-
+          DynamicUser = true;
+          Restart = "always";
+          StateDirectory = /var/lib/xnode/${coreName}/cbft-home; # Duplicate of dataDir?
+          ExecStart = "${package}/core"
         }
       })
     ))
