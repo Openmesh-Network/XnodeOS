@@ -1,13 +1,12 @@
-.PHONY: clean iso ipxe install all default
-
-default:
-	echo 'you must choose one of: clean, iso, or netboot'
+.PHONY: clean iso all
 
 clean:
 	rm -rf result
 
 iso:
-	nix build --extra-experimental-features nix-command --extra-experimental-features flakes -L --print-out-paths '.#iso'
+	nix --extra-experimental-features nix-command --extra-experimental-features flakes build '.#iso'
 
-netboot:
-	nix build --extra-experimental-features nix-command --extra-experimental-features flakes -L --print-out-paths '.#netboot'
+install:
+	sudo cp result/iso/nixos.iso ~/Downloads/nixos.iso
+
+all: clean iso

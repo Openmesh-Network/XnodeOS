@@ -14,7 +14,6 @@
       packages = {
         x86_64-linux = {
           iso = import ./packages/iso.nix flakeContext;
-          netboot = import ./packages/netboot.nix flakeContext;
         };
       };
     };
