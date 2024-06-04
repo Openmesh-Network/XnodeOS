@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build XnodeOS Netboot/iPXE Image and Support Files
+    name: Build XnodeOS ISO Image
     runs-on: ubuntu-22.04
     steps:
       - name: Git checkout
