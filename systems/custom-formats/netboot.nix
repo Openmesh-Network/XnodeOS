@@ -15,8 +15,8 @@
       nuke-refs $out/kernel
     '';
     xnode_version = "0";
-    xnode_uuid = "303a03f7-0619-4bd2-85b7-a56c7e12c4b6"; # XU Controller inserts these already
-    xnode_access_token = "TEEH0Km2gOEppGnArOeqir776lr3F7GisdjRMeQ0YoX4rcmuilV3e5vaPFCM8JFn";
+    xnode_uuid = "817cdd1c-af4e-43c7-b1d6-316d401302c8"; # Just for testing, the XU Controller inserts these already
+    xnode_access_token = "sNfU7ZXRFxJo5pZWULHwtseXSWo7qNyedJGx5NvhzsBZJ4snfkQErfxbupnu2feo";
     ipxe_script = pkgs.writeTextFile {
       executable = false;
       name = "ipxe";

@@ -53,7 +53,7 @@ in
       wants = [ "network-online.target" ];
 
       serviceConfig = {
-        ExecStart = ''${lib.getExe cfg.package} -p ${cfg.stateDir}/${cfg.localStateFilename} ${cfg.remoteDir} ${toString cfg.searchInterval}''; 
+        ExecStart = ''${lib.getExe cfg.package} -p ${cfg.stateDir} ${cfg.remoteDir} ${toString cfg.searchInterval}''; 
         Restart = "always";
         WorkingDirectory = cfg.stateDir;
         StateDirectory = "openmesh-xnode-admin";
