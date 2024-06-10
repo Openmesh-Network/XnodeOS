@@ -36,7 +36,7 @@ let
         squashfsCompression = "gzip -Xcompression-level 1";
       };
       boot = {
-        postBootCommands = ''echo '{config,lib,pkgs,...}:{imports=[./hardware-configuration.nix ++ lib.optional (builtins.pathExists /var/lib/openmesh-xnode-admin/config.nix) /var/lib/openmesh-xnode-admin/config.nix]; boot.loader.grub.enable=false;}' > /etc/nixos/configuration.nix && echo '{config,lib,pkgs,modulesPath,...}:{fileSystems."/"={device="tmpfs";fsType="tmpfs";};nixpkgs.hostPlatform=lib.mkDefault "x86_64-linux";}' > /etc/nixos/hardware-configuration.nix'';
+        postBootCommands = ''echo '{config,lib,pkgs,...}:{imports=[./hardware-configuration.nix] ++ lib.optional (builtins.pathExists /var/lib/openmesh-xnode-admin/config.nix) /var/lib/openmesh-xnode-admin/config.nix; boot.loader.grub.enable=false;}' > /etc/nixos/configuration.nix && echo '{config,lib,pkgs,modulesPath,...}:{fileSystems."/"={device="tmpfs";fsType="tmpfs";};nixpkgs.hostPlatform=lib.mkDefault "x86_64-linux";}' > /etc/nixos/hardware-configuration.nix'';
       };
       networking = {
         hostName = "xnode";
